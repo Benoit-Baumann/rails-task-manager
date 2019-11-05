@@ -1,0 +1,9 @@
+<h1>My tasks</h1>
+<div class="tasks">
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><input type="checkbox" <%= 'checked' if task.completed %>> <%= link_to(task.title, task_path(task)) %></li>
+    <% end %>
+  </ul>
+</div>
+<h3><%= link_to 'Add a new task', new_task_path, class: "btn btn-gradient" %></h3>
